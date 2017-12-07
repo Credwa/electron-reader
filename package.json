@@ -1,0 +1,52 @@
+{
+  "name": "Reader",
+  "productname": "Electron Reader",
+  "version": "1.0.0",
+  "description": "An Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . electron-reader-app --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-reader-app --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Reader App\"",
+    "package-linux": "electron-packager . electron-reader-app --overwrite --asar --platform=linux --arch=x64 --prune=true --out=release-builds",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "productName": "yohannes-electron-reader",
+    "appId": "org.yohannes.electron-reader",
+    "directories": {
+      "output": "dist"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "build/icons/icon.icns"
+    },
+    "win": {
+      "icon": "build/icons/icon.ico"
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+  },
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8",
+    "electron-builder": "^19.48.2",
+    "electron-packager": "^10.1.0"
+  }
+}

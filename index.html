@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+  </head>
+  <style>
+    *{
+      -webkit-font-smoothing: subpixel-antialiased;
+      text-rendering        : optimizeLegibility;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+  </style>
+  <body>
+    <script type="text/javascript" src="./src/wordMap.js"></script>
+    <script type="text/javascript" src="./src/entry.js"></script>
+    <script>
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
